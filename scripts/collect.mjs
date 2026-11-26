@@ -6,7 +6,9 @@ import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { APP } from '../app/js/config.js';
 import { normalizeTitle, normalizeUrl, parseCnbcQuotes } from '../app/js/shared.js';
-import { NEWS_SOURCES, CALENDAR_SOURCE, INDICES_SOURCE, LIMITS } from './sources.mjs';
+import { NEWS_SOURCES, CALENDAR_SOURCE, INDICES_SOURCE, LIMITS, UNIVERSE_SOURCE, CRYPTO_SOURCES, P2_FETCHES } from './sources.mjs';
+import { parseCnbcAny, parseCgGlobal, parseFng, parseCgSimple, appendSnapshots } from './markets.mjs';
+import { buildStories } from './impact.mjs';
 import { parseFeed, parseFFCalendar } from './parse.mjs';
 
 export const USER_AGENT = `${APP.name}NewsReader/1.0 (personal RSS reader; GitHub Actions)`;
@@ -30,7 +32,7 @@ export async function defaultFetchText(url, { timeoutMs = 20000, retries = 1 } =
 }
 
 export function fixtureFetcher(dir) {
-  const byUrl = new Map([...NEWS_SOURCES, CALENDAR_SOURCE, INDICES_SOURCE].map((s) => [s.url, s.id]));
+  const byUrl = new Map([...NEWS_SOURCES, CALENDAR_SOURCE, INDICES_SOURCE, ...P2_FETCHES].map((s) => [s.url, s.id]));
   return async (url) => {
     const id = byUrl.get(url);
     if (!id) throw new Error(`Sin copia guardada para ${url}`);
@@ -109,10 +111,54 @@ export async function collect({ fetchText = defaultFetchText, now = new Date(), 
     status[INDICES_SOURCE.id] = { name: INDICES_SOURCE.name, ok: false, count: 0, error: String(e.message || e), checkedAt: nowIso, lastOk: prevStatus[INDICES_SOURCE.id]?.lastOk || null };
   }
 
+  const okStatus = (id, name, count) => (status[id] = { name, ok: true, count, checkedAt: nowIso, lastOk: nowIso });
+  const failStatus = (id, name, e) => (status[id] = { name, ok: false, count: 0, error: String(e?.message || e), checkedAt: nowIso, lastOk: prevStatus[id]?.lastOk || null });
+
+  // P2: universo de CNBC (acciones, ETFs, sectores, ADR, forex y macro). Si una tanda falla, las demás siguen.
+  const snapPrices = {};
+  let markets = prev.markets || null;
+  {
+    const res = await Promise.allSettled(UNIVERSE_SOURCE.urls.map(async (u) => parseCnbcAny(JSON.parse(await fetchText(u)))));
+    const quotes = Object.assign({}, ...res.filter((r) => r.status === 'fulfilled').map((r) => r.value));
+    const bad = res.filter((r) => r.status === 'rejected');
+    if (Object.keys(quotes).length) {
+      markets = { generatedAt: nowIso, source: UNIVERSE_SOURCE.name, quotes };
+      for (const [k, q] of Object.entries(quotes)) snapPrices[k] = q.last;
+      okStatus(UNIVERSE_SOURCE.id, UNIVERSE_SOURCE.name, Object.keys(quotes).length);
+      if (bad.length) status[UNIVERSE_SOURCE.id].error = `${bad.length} de ${res.length} tandas fallaron: ${bad[0].reason?.message || bad[0].reason}`;
+    } else failStatus(UNIVERSE_SOURCE.id, UNIVERSE_SOURCE.name, bad[0]?.reason || 'sin datos');
+  }
+
+  // P2: cripto global, precios para las series y Fear & Greed. Cada parte conserva lo anterior si falla.
+  const crypto = { ...(prev.crypto || {}), generatedAt: nowIso };
+  const parsers = { 'coingecko-global': parseCgGlobal, 'coingecko-simple': parseCgSimple, fng: parseFng };
+  const field = { 'coingecko-global': 'global', 'coingecko-simple': 'prices', fng: 'fng' };
+  await Promise.all(
+    CRYPTO_SOURCES.map(async (src) => {
+      try {
+        const v = parsers[src.id](JSON.parse(await fetchText(src.url)));
+        crypto[field[src.id]] = { ...v, source: src.name, checkedAt: nowIso };
+        okStatus(src.id, src.name, 1);
+        if (src.id === 'coingecko-simple') for (const [k, p] of Object.entries(v)) snapPrices[k] = p.price;
+      } catch (e) {
+        failStatus(src.id, src.name, e);
+      }
+    })
+  );
+
+  // P2: series de precio (solo con precios frescos de esta corrida) e historias con impacto.
+  const snapshots = appendSnapshots(prev.snapshots, snapPrices, now);
+  const cal = calendar || { generatedAt: null, events: [] };
+  const stories = buildStories({ items, calendar: cal, snapshots, prev: prev.stories, now });
+
   return {
     news: { generatedAt: nowIso, items },
-    calendar: calendar || { generatedAt: null, events: [] },
+    calendar: cal,
     indices: indices || { generatedAt: null, quotes: [] },
+    markets: markets || { generatedAt: null, source: UNIVERSE_SOURCE.name, quotes: {} },
+    crypto,
+    snapshots,
+    stories,
     status: { generatedAt: nowIso, sources: status },
   };
 }
@@ -120,7 +166,7 @@ export async function collect({ fetchText = defaultFetchText, now = new Date(), 
 async function loadPrev(where) {
   const prev = {};
   if (!where) return prev;
-  for (const name of ['news', 'calendar', 'indices', 'status']) {
+  for (const name of ['news', 'calendar', 'indices', 'status', 'markets', 'crypto', 'snapshots', 'stories']) {
     try {
       let text;
       if (/^https?:\/\//.test(where)) {
@@ -165,5 +211,6 @@ if (import.meta.url === pathToFileURL(resolve(process.argv[1] || '')).href) {
   await writeOutput(out, data);
   const s = data.status.sources;
   for (const [id, v] of Object.entries(s)) console.log(`${v.ok ? 'OK  ' : 'FALLA'} ${id.padEnd(16)} ${v.ok ? v.count : v.error}`);
+  console.log(`${data.stories.stories.length} historias, ${Object.keys(data.markets.quotes).length} cotizaciones, ${Object.keys(data.snapshots.series).length} series`);
   console.log(`${data.news.items.length} noticias, ${data.calendar.events.length} eventos, ${data.indices.quotes.length} índices → ${out}`);
 }

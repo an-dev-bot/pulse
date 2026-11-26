@@ -34,6 +34,14 @@ export async function freshData(name) {
   return json;
 }
 
+function downsample(arr, n) {
+  if (!Array.isArray(arr) || arr.length < 2) return undefined;
+  if (arr.length <= n) return arr.map((x) => Number(Number(x).toPrecision(6)));
+  const out = [];
+  for (let i = 0; i < n; i++) out.push(Number(Number(arr[Math.round((i * (arr.length - 1)) / (n - 1))]).toPrecision(6)));
+  return out;
+}
+
 // Precios principales (CoinGecko, CORS permitido).
 export async function fetchCoins() {
   const list = await getJson(COINGECKO_MARKETS_URL);
@@ -41,6 +49,7 @@ export async function fetchCoins() {
   const coins = list.map((c) => ({
     id: c.id, symbol: String(c.symbol || '').toUpperCase(), name: c.name, rank: c.market_cap_rank,
     price: c.current_price, change24: c.price_change_percentage_24h, volume: c.total_volume, mcap: c.market_cap,
+    spark: downsample(c.sparkline_in_7d?.price, 42), // 7 días de CoinGecko (si los manda)
   }));
   const out = { fetchedAt: new Date().toISOString(), coins };
   cacheSet('coins', out);

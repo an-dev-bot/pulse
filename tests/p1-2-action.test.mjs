@@ -39,7 +39,7 @@ test('p1 escribe JSON válido', async () => {
   const dir = await mkdtemp(join(tmpdir(), 'p1-'));
   await writeOutput(dir, await collect({ fetchText: fx, now: NOW }));
   const files = (await readdir(dir)).sort();
-  assert.deepEqual(files, ['calendar.json', 'indices.json', 'news.json', 'status.json']);
+  assert.deepEqual(files, ['calendar.json', 'crypto.json', 'indices.json', 'markets.json', 'news.json', 'snapshots.json', 'status.json', 'stories.json']); // P2: cuatro archivos nuevos
   for (const f of files) JSON.parse(await readFile(join(dir, f), 'utf8'));
 });
 

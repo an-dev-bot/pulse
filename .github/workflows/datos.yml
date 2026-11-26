@@ -1,5 +1,8 @@
 # Junta noticias, calendario e índices cada 15 minutos y publica la app + los JSON en GitHub Pages.
-# GitHub puede atrasar las ejecuciones programadas unos minutos cuando hay mucha carga.
+# P2: también historias (stories.json), cotizaciones del universo (markets.json), cripto global (crypto.json) y las
+# fotos de precios (snapshots.json); todo se encadena con --prev (unos 5 días de fotos).
+# GitHub puede atrasar las ejecuciones programadas cuando hay mucha carga. Si el horario deja de correr,
+# Actions → «Datos y publicación» → Run workflow lo arranca a mano; la app avisa cuando los datos pasan de 45 min.
 name: Datos y publicación
 
 on:

@@ -3,7 +3,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { launch, startServer, newPage, ready, prepareData, recordRequests, TABS } from './helpers.mjs';
+import { launch, startServer, newPage, ready, prepareData, recordRequests, TABS, goTo, openSettings } from './helpers.mjs';
 
 const SECRETS = ['Zqxkeyword', 'ListaSecretaQ', '1112223334445556667', 'savedidzz9', 'Guardado secreto ZZ9', 'zz9-nota', 'readidqq7'];
 const PERSONAL = {
@@ -30,7 +30,7 @@ test('p1 ninguna petición manda listas de X, palabras clave, guardados ni leíd
   await page.goto(srv.url);
   await ready(page);
   for (const tab of TABS) {
-    await page.click(`.tabs [data-tab="${tab}"]`);
+    await goTo(page, tab); // P2: pestañas nuevas (ver helpers.goTo)
     await page.waitForTimeout(120);
   }
   await page.click('.tabs [data-tab="memes"]');
@@ -44,7 +44,7 @@ test('p1 ninguna petición manda listas de X, palabras clave, guardados ni leíd
   await page.fill('#q', 'Zqxkeyword');
   await page.waitForTimeout(250);
   await page.click('#sheet-search [data-close]');
-  await page.click('#btn-settings');
+  await openSettings(page);
   await page.waitForTimeout(100);
   await page.evaluate(() => window.p1.refresh());
   await page.waitForTimeout(300);
@@ -73,13 +73,14 @@ test('p1 exportar e importar deja todo igual', async () => {
   await ready(page);
   // Marcar una leída y guardar una real desde la interfaz
   await page.click('#v-live .it:nth-child(1) .act-save');
+  await page.click('#v-live .it:nth-child(2) .act-open'); // P2: «leída» vive en la tarjeta abierta
   await page.click('#v-live .it:nth-child(2) .act-read');
-  const snapshot = () => page.evaluate(() => Object.fromEntries(['lang', 'keywords', 'lists', 'saved', 'read'].map((k) => [k, JSON.parse(localStorage.getItem('p1.' + k))])));
+  const snapshot = () => page.evaluate(() => Object.fromEntries(['lang', 'keywords', 'lists', 'saved', 'read', 'watchlist'].map((k) => [k, JSON.parse(localStorage.getItem('p1.' + k))])));
   const before = await snapshot();
   assert.equal(before.saved.length, 2);
   assert.equal(before.read.length, 2);
 
-  await page.click('#btn-settings');
+  await openSettings(page);
   const [dl] = await Promise.all([page.waitForEvent('download'), page.click('[data-export]')]);
   const file = await dl.path();
   const backup = JSON.parse(await readFile(file, 'utf8'));
@@ -91,18 +92,17 @@ test('p1 exportar e importar deja todo igual', async () => {
   const empty = await snapshot();
   assert.deepEqual(empty.keywords, null);
 
-  await page.click('#btn-settings');
+  await openSettings(page);
   await page.setInputFiles('#import-file', file);
   await page.waitForFunction(() => !document.getElementById('toast').hidden);
   const afterImport = await snapshot();
   assert.deepEqual(afterImport, before);
   // La interfaz refleja lo importado sin recargar (idioma inglés, lista de X)
-  assert.equal(await page.textContent('.tabs [data-tab="stocks"] span'), 'Stocks');
-  await page.click('#sheet-settings [data-close]');
-  await page.click('.tabs [data-tab="tweets"]');
+  assert.equal(await page.textContent('.tabs [data-tab="markets"] span'), 'Markets'); // P2: pestaña Markets
+  await goTo(page, 'tweets');
   assert.equal(await page.textContent('.xl-h b'), 'ListaSecretaQ');
   // Un archivo que no es respaldo no rompe nada
-  await page.click('#btn-settings');
+  await openSettings(page);
   await page.setInputFiles('#import-file', { name: 'malo.json', mimeType: 'application/json', buffer: Buffer.from('{"hola":1}') });
   await page.waitForTimeout(200);
   assert.deepEqual(await snapshot(), before);

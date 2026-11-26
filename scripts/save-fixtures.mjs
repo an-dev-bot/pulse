@@ -3,7 +3,7 @@
 //      node scripts/save-fixtures.mjs --solo-recortar   (solo recorta las copias que ya existen)
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { ALL_SOURCES } from './sources.mjs';
+import { ALL_SOURCES, P2_FETCHES } from './sources.mjs';
 import { defaultFetchText } from './collect.mjs';
 import { stripHtml } from './parse.mjs';
 import { COINGECKO_MARKETS_URL, GT_BASE, DS_BASE } from '../app/js/config.js';
@@ -29,6 +29,35 @@ if (process.argv.includes('--solo-recortar')) {
   console.log('copias recortadas');
   process.exit(0);
 }
+
+// P2: universo de CNBC y cripto global. Se guardan solo los campos que se leen (copias chicas).
+export function trimCnbc(text) {
+  const j = JSON.parse(text);
+  const list = j?.FormattedQuoteResult?.FormattedQuote || [];
+  const keep = ['symbol', 'code', 'name', 'last', 'change', 'change_pct', 'last_time', 'realTime'];
+  const out = list.map((q) => {
+    const o = Object.fromEntries(keep.filter((k) => k in q).map((k) => [k, q[k]]));
+    if (q.EventData?.next_earnings_date) o.EventData = { next_earnings_date: q.EventData.next_earnings_date };
+    return o;
+  });
+  return JSON.stringify({ FormattedQuoteResult: { FormattedQuote: out } });
+}
+async function saveP2() {
+  for (const s of P2_FETCHES) {
+    try {
+      const t = await defaultFetchText(s.url);
+      await writeFile(join(dir, `${s.id}.json`), s.id.startsWith('cnbc-universe') ? trimCnbc(t) : t);
+      console.log('guardado', s.id, t.length);
+    } catch (e) {
+      console.log('FALLA', s.id, e.message);
+    }
+  }
+}
+if (process.argv.includes('--solo-p2')) {
+  await saveP2();
+  process.exit(0);
+}
+await saveP2();
 
 await mkdir(join(dir, 'direct'), { recursive: true });
 

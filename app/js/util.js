@@ -7,6 +7,16 @@ export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ESC[c]);
 export const $ = (sel, root = document) => root.querySelector(sel);
 export const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
+// Zona horaria del dispositivo (la de ella); si el navegador no la da, la de config.js.
+export const TZ = (() => {
+  try {
+    return Intl.DateTimeFormat().resolvedOptions().timeZone || APP.timeZone;
+  } catch {
+    return APP.timeZone;
+  }
+})();
+export const tzName = () => TZ.replace(/_/g, ' ').split('/').pop();
+
 const fmtCache = new Map();
 function fmt(key, make) {
   const k = getLang() + key;
@@ -17,13 +27,13 @@ function fmt(key, make) {
 
 export function clock(iso) {
   if (!iso) return '';
-  return fmt('clock', (l) => new Intl.DateTimeFormat(l, { timeZone: APP.timeZone, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })).format(new Date(iso));
+  return fmt('clock', (l) => new Intl.DateTimeFormat(l, { timeZone: TZ, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })).format(new Date(iso));
 }
 export function dayLabel(iso) {
-  return fmt('day', (l) => new Intl.DateTimeFormat(l, { timeZone: APP.timeZone, weekday: 'short', day: 'numeric', month: 'short' })).format(new Date(iso));
+  return fmt('day', (l) => new Intl.DateTimeFormat(l, { timeZone: TZ, weekday: 'short', day: 'numeric', month: 'short' })).format(new Date(iso));
 }
 export function dayKey(iso) {
-  return fmt('dkey', () => new Intl.DateTimeFormat('en-CA', { timeZone: APP.timeZone, year: 'numeric', month: '2-digit', day: '2-digit' })).format(new Date(iso));
+  return fmt('dkey', () => new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' })).format(new Date(iso));
 }
 
 export function ago(iso, now = Date.now()) {
@@ -107,4 +117,50 @@ export function matchesKeyword(item, re) {
   const m = re.exec(`${item.title} ${item.summary || ''}`);
   re.lastIndex = 0;
   return m ? m[2] : null;
+}
+
+// Fecha sin hora (por ejemplo, «2027-02-23» de un reporte de resultados): se muestra tal cual, sin mover de día.
+export function dateOnly(ymd) {
+  const d = new Date(ymd + 'T12:00:00Z');
+  if (Number.isNaN(d.getTime())) return '';
+  return fmt('donly', (l) => new Intl.DateTimeFormat(l, { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })).format(d);
+}
+
+export function pctText(n, digits = 2) {
+  if (n == null || !Number.isFinite(n)) return '';
+  const sign = n > 0 ? '+' : n < 0 ? '−' : '';
+  return `${sign}${num(Math.abs(n), digits)}%`;
+}
+
+// Precio con decimales según su tamaño (acciones, pares, índices).
+export function quoteNum(n) {
+  if (n == null || !Number.isFinite(n)) return '—';
+  const a = Math.abs(n);
+  return num(n, a >= 1000 ? 2 : a >= 10 ? 2 : a >= 1 ? 4 : 4);
+}
+
+// Mini-gráfica SVG a partir de valores. Sin datos suficientes → cadena vacía (no se dibuja nada).
+export function sparkline(values, { w = 96, h = 28, cls = '' } = {}) {
+  const v = (values || []).filter((x) => Number.isFinite(x));
+  if (v.length < 2) return '';
+  const min = Math.min(...v);
+  const max = Math.max(...v);
+  const span = max - min || 1;
+  const step = w / (v.length - 1);
+  const pts = v.map((x, i) => `${(i * step).toFixed(1)},${(h - 2 - ((x - min) / span) * (h - 4)).toFixed(1)}`).join(' ');
+  const dir = v[v.length - 1] > v[0] ? 'up' : v[v.length - 1] < v[0] ? 'down' : 'flat';
+  return `<svg class="spark ${dir} ${cls}" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" aria-hidden="true"><polyline points="${pts}"/></svg>`;
+}
+
+// Serie de la Action ([[tMin, precio, tFin?], …]) → valores para la mini-gráfica (últimos `days` días).
+export function seriesValues(series, days = 5, now = Date.now()) {
+  if (!Array.isArray(series)) return [];
+  const from = now / 60000 - days * 1440;
+  const out = [];
+  for (const [t0, p, t1] of series) {
+    if ((t1 ?? t0) < from) continue;
+    out.push(p);
+    if (t1 != null && t1 - t0 > 60) out.push(p);
+  }
+  return out;
 }

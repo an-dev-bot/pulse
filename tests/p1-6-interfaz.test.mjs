@@ -2,7 +2,8 @@
 // Más: promocionados marcados, ningún texto de la app recomienda, calendario, palabras clave, leídos y X.
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { launch, startServer, newPage, ready, prepareData, TABS } from './helpers.mjs';
+import { launch, startServer, newPage, ready, prepareData, TABS, goTo, openSettings } from './helpers.mjs';
+// P2: las pestañas de P1 se visitan con goTo (Markets tiene Stocks/Crypto/Forex; More tiene Saved/Posts/Settings/Sources).
 import { ADVICE, TREND } from './p1-4-neutral.test.mjs';
 
 const LISTS = JSON.stringify([{ name: 'Traders FX', url: 'https://x.com/i/lists/1234567890' }]);
@@ -46,7 +47,8 @@ test('p1 el scroll no salta al llegar noticias nuevas: aparece «N nuevas ↑»'
   assert.equal(after.pill, '3 nuevas ↑');
   await page.click('#pill');
   await page.waitForFunction(() => window.scrollY === 0);
-  assert.equal(await page.getAttribute('#v-live .it:first-child', 'data-id'), 'nueva1');
+  // P2: el orden por defecto es «Top» (impacto × recencia), así que lo nuevo entra a la lista pero no tiene por qué ir primero.
+  assert.ok(await page.$('#v-live .it[data-id="nueva1"]'), 'la noticia nueva entró a la lista');
   await context.close();
 });
 
@@ -86,14 +88,9 @@ for (const width of [375, 320]) {
           }
           return bad.slice(0, 8);
         });
-      for (const tab of TABS) {
-        await page.click(`.tabs [data-tab="${tab}"]`);
+      for (const tab of [...TABS, 'calendar', 'sources']) {
+        await goTo(page, tab);
         if (tab === 'memes') await page.waitForSelector('#v-memes .coin', { timeout: 10000 });
-        if (tab === 'forex') {
-          await page.click('[data-chip="fx"][data-v="news"]');
-          assert.deepEqual(await check(), [], `${tab}/noticias`);
-          await page.click('[data-chip="fx"][data-v="cal"]');
-        }
         assert.deepEqual(await check(), [], tab);
       }
       await page.click('[data-chip="mview"][data-v="promoted"]').catch(() => {});
@@ -101,9 +98,8 @@ for (const width of [375, 320]) {
       await page.click('[data-chip="mview"][data-v="promoted"]');
       await page.waitForSelector('#v-memes .coin.promo', { timeout: 10000 });
       assert.deepEqual(await check(), [], 'promocionados');
-      await page.click('#btn-settings');
+      await openSettings(page);
       assert.deepEqual(await check(), [], 'ajustes');
-      await page.click('#sheet-settings [data-close]');
       await page.click('#btn-search');
       await page.fill('#q', 'bitcoin');
       await page.waitForTimeout(250);
@@ -118,14 +114,14 @@ test('p1 cambiar de idioma en Ajustes no recarga la página', async () => {
   await page.goto(srv.url);
   await ready(page);
   await page.evaluate(() => (window.__sinRecargar = true));
-  assert.equal(await page.textContent('.tabs [data-tab="stocks"] span'), 'Acciones');
-  await page.click('#btn-settings');
+  assert.equal(await page.textContent('.tabs [data-tab="markets"] span'), 'Mercados');
+  await openSettings(page);
   await page.click('[data-chip="lang"][data-v="en"]');
-  assert.equal(await page.textContent('.tabs [data-tab="stocks"] span'), 'Stocks');
-  assert.equal(await page.textContent('#sheet-settings h2'), 'Settings');
+  assert.equal(await page.textContent('.tabs [data-tab="markets"] span'), 'Markets');
+  assert.equal(await page.textContent('#v-more .backbar h2'), 'Settings');
   assert.equal(await page.getAttribute('html', 'lang'), 'en');
   await page.click('[data-chip="lang"][data-v="es"]');
-  assert.equal(await page.textContent('.tabs [data-tab="stocks"] span'), 'Acciones');
+  assert.equal(await page.textContent('.tabs [data-tab="markets"] span'), 'Mercados');
   assert.equal(await page.evaluate(() => window.__sinRecargar), true);
   await context.close();
 });
@@ -146,8 +142,8 @@ test('p1 promocionados marcados como «Promocionado» y ningún texto de la app 
       await page.waitForSelector('#v-memes .coin', { timeout: 10000 });
       assert.equal(await page.$$eval('#v-memes .coin .badge-promo', (b) => b.length), 0, `${v} no lleva marca de pago`);
     }
-    for (const tab of TABS) await page.click(`.tabs [data-tab="${tab}"]`);
-    await page.click('#btn-settings');
+    for (const tab of TABS) await goTo(page, tab);
+    await openSettings(page);
     // Texto propio de la app (sin titulares de medios ni nombres de monedas, que no son de la app)
     const own = await page.evaluate(() => {
       const c = document.body.cloneNode(true);
@@ -165,10 +161,10 @@ test('p1 calendario: alto impacto en rojo, cuenta regresiva y hora de Ciudad de 
   await page.clock.install({ time: new Date('2026-11-25T12:00:00Z') });
   await page.goto(srv.url);
   await ready(page);
-  await page.click('.tabs [data-tab="forex"]');
-  const cd = await page.textContent('#v-forex .next .cd');
+  await goTo(page, 'calendar'); // P2: el calendario tiene su propia pestaña
+  const cd = await page.textContent('#v-calendar .next .cd');
   assert.equal(cd, 'en 1 h 30 min'); // Core PCE a las 13:30 UTC
-  const row = page.locator('#v-forex .ev.high', { hasText: 'Core PCE Price Index m/m' });
+  const row = page.locator('#v-calendar .ev.high', { hasText: 'Core PCE Price Index m/m' });
   assert.equal(await row.locator('.tm').textContent(), '07:30'); // 13:30 UTC = 07:30 en CDMX
   assert.equal(await row.locator('.imp').evaluate((e) => getComputedStyle(e).backgroundColor), 'rgb(255, 59, 92)');
   await context.close();
@@ -186,6 +182,7 @@ test('p1 palabras clave resaltan y avisan; leídas se apagan y se recuerdan; bú
   assert.ok((await page.$$('#v-live mark')).length > 0, 'hay resaltados');
   assert.ok((await page.$$('#v-live .it.kw')).length > 0);
   const id = await page.getAttribute('#v-live .it:nth-child(3)', 'data-id');
+  await page.click('#v-live .it:nth-child(3) .act-open'); // P2: «leída» vive en la tarjeta abierta
   await page.click('#v-live .it:nth-child(3) .act-read');
   assert.ok(await page.$eval(`#v-live .it[data-id="${id}"]`, (e) => e.classList.contains('read') && getComputedStyle(e.querySelector('.it-main')).opacity < 0.6));
   await page.reload();
@@ -204,7 +201,7 @@ test('p1 Tuits: botón por lista; si X no deja incrustar, mensaje tranquilo sin 
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto(srv.url);
   await ready(page);
-  await page.click('.tabs [data-tab="tweets"]');
+  await goTo(page, 'tweets');
   const a = page.locator('.xl a.btn');
   assert.equal(await a.getAttribute('href'), 'https://x.com/i/lists/1234567890');
   assert.equal(await a.getAttribute('target'), '_blank');

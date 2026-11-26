@@ -1,7 +1,7 @@
 // Prueba 7: sin internet abre con lo último; abrir < 2 s y cambiar de pestaña < 150 ms con la CPU 4× más lenta.
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { launch, startServer, newPage, ready, prepareData, TABS } from './helpers.mjs';
+import { launch, startServer, newPage, ready, prepareData, P2_TABS, goTo } from './helpers.mjs';
 
 let browser, srv;
 before(async () => {
@@ -36,13 +36,13 @@ test('p1 sin internet abre con lo último guardado y su hora', async () => {
   assert.equal(await page.$$eval('#v-live .it', (x) => x.length), liveCount, 'mismas noticias');
   await page.waitForSelector('#offline:not([hidden])');
   assert.match(await page.textContent('#offline'), /Sin conexión/);
-  assert.match(await page.textContent('#v-live [data-upd]'), /Actualizado (hace .+|ahora)/);
+  assert.match(await page.textContent('#v-live [data-upd]'), /Revisado (hace .+|ahora)/ /* P2: «Revisado …» */);
   assert.match(await page.textContent('#ticker'), /BTC\$\d/);
   assert.match(await page.textContent('#ticker'), /S&P 500/);
   await page.click('.tabs [data-tab="memes"]');
   assert.ok((await page.$$('#v-memes .coin')).length > 0, 'memecoins guardadas');
-  await page.click('.tabs [data-tab="forex"]');
-  assert.ok((await page.$$('#v-forex .ev')).length > 0, 'calendario guardado');
+  await goTo(page, 'calendar'); // P2: calendario en su pestaña
+  assert.ok((await page.$$('#v-calendar .ev')).length > 0, 'calendario guardado');
   await context.close();
 });
 
@@ -62,7 +62,7 @@ test('p1 rapidez con CPU 4× más lenta: abrir < 2 s y cambiar de pestaña < 150
 
   const times = {};
   for (const round of [1, 2]) {
-    for (const tab of [...TABS.slice(1), 'live']) {
+    for (const tab of [...P2_TABS.slice(1), 'live']) /* P2: 5 pestañas */ {
       const dt = await page.evaluate(async (tab) => {
         const b = document.querySelector(`.tabs [data-tab="${tab}"]`);
         const t0 = performance.now();

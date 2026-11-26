@@ -1,6 +1,7 @@
 // Fuentes que junta la GitHub Action. Todas comprobadas (ver `npm run p1:fuentes`).
 // type: rss | ff-calendar | cnbc-quotes
-import { cnbcQuoteUrl } from '../app/js/config.js';
+import { cnbcQuoteUrl, COINGECKO_GLOBAL_URL, COINGECKO_SIMPLE_URL, FNG_URL } from '../app/js/config.js';
+import { universeUrls } from './markets.mjs';
 
 export const NEWS_SOURCES = [
   // Cripto
@@ -28,7 +29,19 @@ export const INDICES_SOURCE = {
   id: 'cnbc-quotes', name: 'CNBC', type: 'cnbc-quotes', url: cnbcQuoteUrl(),
 };
 
+// P2: cotizaciones del universo (acciones, ETFs, sectores, ADR, forex, macro) en tandas de 40 símbolos.
+export const UNIVERSE_SOURCE = { id: 'cnbc-universe', name: 'CNBC', type: 'cnbc-universe', urls: universeUrls() };
+// P2: datos globales de cripto. Se piden desde la Action (así el teléfono sigue hablando solo con los servidores de P1).
+export const CRYPTO_SOURCES = [
+  { id: 'coingecko-global', name: 'CoinGecko', type: 'json', url: COINGECKO_GLOBAL_URL },
+  { id: 'coingecko-simple', name: 'CoinGecko', type: 'json', url: COINGECKO_SIMPLE_URL },
+  { id: 'fng', name: 'alternative.me', type: 'json', url: FNG_URL },
+];
+// Cada URL que pide la Action con el nombre de su copia guardada en tests/fixtures.
+export const UNIVERSE_FIXTURES = UNIVERSE_SOURCE.urls.map((url, i) => ({ id: `cnbc-universe-${i + 1}`, url }));
+
 export const ALL_SOURCES = [...NEWS_SOURCES, CALENDAR_SOURCE, INDICES_SOURCE];
+export const P2_FETCHES = [...UNIVERSE_FIXTURES, ...CRYPTO_SOURCES];
 
 // Fuentes que la app pide directo desde el teléfono (permiten CORS). Solo para la revisión de fuentes reales.
 export const DIRECT_SOURCES = [
