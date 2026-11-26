@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.twitter.com https://cdn.syndication.twimg.com; style-src 'self' 'unsafe-inline' https://platform.twitter.com https://*.twimg.com; connect-src 'self' https://api.coingecko.com https://api.geckoterminal.com https://api.dexscreener.com; img-src 'self' data: https://*.twimg.com https://platform.twitter.com https://syndication.twitter.com; frame-src https://platform.twitter.com https://syndication.twitter.com https://twitter.com https://x.com; manifest-src 'self'; worker-src 'self'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="__THEME__">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="__NAME__">
+<title>__NAME__</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="modulepreload" href="js/main.js">
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <div class="brand"><span class="pulse-dot" aria-hidden="true"></span><b id="brand">__NAME__</b></div>
+    <span id="net" class="net mono" hidden></span>
+    <button id="btn-search" class="ib" type="button" data-i18n-label="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></button>
+    <button id="btn-settings" class="ib" type="button" data-i18n-label="settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/></svg></button>
+  </div>
+  <div id="ticker" class="ticker" role="list"></div>
+</header>
+<div id="offline" class="offline" hidden></div>
+<button id="pill" class="pill" type="button" hidden></button>
+<main id="main">
+  <section class="view" id="v-live" data-view="live"></section>
+  <section class="view" id="v-memes" data-view="memes" hidden></section>
+  <section class="view" id="v-crypto" data-view="crypto" hidden></section>
+  <section class="view" id="v-forex" data-view="forex" hidden></section>
+  <section class="view" id="v-stocks" data-view="stocks" hidden></section>
+  <section class="view" id="v-tweets" data-view="tweets" hidden></section>
+  <section class="view" id="v-saved" data-view="saved" hidden></section>
+</main>
+<nav class="tabs" role="tablist">
+  <button type="button" role="tab" data-tab="live" aria-selected="true"><i>🔥</i><span data-i18n="tab.live"></span></button>
+  <button type="button" role="tab" data-tab="memes"><i>🐸</i><span data-i18n="tab.memes"></span></button>
+  <button type="button" role="tab" data-tab="crypto"><i>🪙</i><span data-i18n="tab.crypto"></span></button>
+  <button type="button" role="tab" data-tab="forex"><i>💱</i><span data-i18n="tab.forex"></span></button>
+  <button type="button" role="tab" data-tab="stocks"><i>📊</i><span data-i18n="tab.stocks"></span></button>
+  <button type="button" role="tab" data-tab="tweets"><i>🐦</i><span data-i18n="tab.tweets"></span></button>
+  <button type="button" role="tab" data-tab="saved"><i>⭐</i><span data-i18n="tab.saved"></span></button>
+</nav>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<div id="sheet-search" class="sheet" role="dialog" aria-modal="true" hidden>
+  <div class="sheet-bar">
+    <input id="q" type="search" autocomplete="off" enterkeyhint="search" data-i18n-ph="search.ph">
+    <button type="button" class="ib" data-close data-i18n-label="close">✕</button>
+  </div>
+  <div id="results" class="sheet-body"></div>
+</div>
+
+<div id="sheet-settings" class="sheet" role="dialog" aria-modal="true" hidden>
+  <div class="sheet-bar">
+    <h2 data-i18n="settings"></h2>
+    <button type="button" class="ib" data-close data-i18n-label="close">✕</button>
+  </div>
+  <div id="settings-body" class="sheet-body"></div>
+</div>
+<input id="import-file" type="file" accept="application/json,.json" hidden>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

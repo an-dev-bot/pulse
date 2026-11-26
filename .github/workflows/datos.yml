@@ -1,0 +1,50 @@
+# Junta noticias, calendario e índices cada 15 minutos y publica la app + los JSON en GitHub Pages.
+# GitHub puede atrasar las ejecuciones programadas unos minutos cuando hay mucha carga.
+name: Datos y publicación
+
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Construir la app
+        run: node scripts/build.mjs dist
+
+      # Toma lo publicado antes para conservar noticias recientes y lo de fuentes que fallen esta vez.
+      - name: Juntar datos
+        run: node scripts/collect.mjs --out dist/data --prev "${{ steps.pages.outputs.base_url }}/data"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

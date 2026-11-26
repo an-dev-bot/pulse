@@ -1,0 +1,17 @@
+{
+  "name": "p1",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "PWA de noticias de trading (proyecto P1).",
+  "scripts": {
+    "p1": "node scripts/build.mjs && node --test --test-concurrency=1 tests/",
+    "p1:fuentes": "node scripts/check-sources.mjs",
+    "p1:fixtures": "node scripts/save-fixtures.mjs",
+    "p1:capturas": "node scripts/build.mjs && node scripts/capturas.mjs",
+    "p1:local": "node scripts/build.mjs && node scripts/collect.mjs --out dist/data && node scripts/serve.mjs dist"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.0"
+  }
+}

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+  <channel>
+    <title>Cointelegraph.com News</title>
+    <link>https://cointelegraph.com</link>
+    <atom:link href="https://cointelegraph.com/rss/tag/memecoin" rel="self" type="application/rss+xml"/>
+    <description>Cointelegraph covers fintech, blockchain and Bitcoin bringing you the latest crypto news and analyses on the future of money.</description>
+    <generator>cointelegraph.com</generator>
+    <lastBuildDate>Thu, 26 Nov 2026 07:18:35 +0000</lastBuildDate>
+    <language>en</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+    <sy:updateFrequency>1</sy:updateFrequency>
+    <image>
+      <title>Cointelegraph.com News</title>
+      <link>https://cointelegraph.com</link>
+      <url>https://s3.cointelegraph.com/storage/uploads/view/b9ea15d46738b4df64e6e100ab59b373.png</url>
+      <description>Cointelegraph covers fintech, blockchain and Bitcoin bringing you the latest crypto news and analyses on the future of money.</description>
+    </image>
+    <item>
+      <title>Half of wallets on Trump’s dinner list got tokens from non-US exchanges</title>
+      <pubDate>Mon, 23 Nov 2026 00:53:49 +0000</pubDate>
+      <atom:updated>Tue, 24 Nov 2026 16:02:59 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/half-wallets-trumps-dinner-list-got-tokens-from-non-us-exchanges</guid>
+      <link><![CDATA[https://cointelegraph.com/news/half-wallets-trumps-dinner-list-got-tokens-from-non-us-exchanges?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Public Citizen traced 66 of 130 qualifying wallets to exchanges that restrict US users, raising questions over who is attending Trump’s memecoin dinner on Sunday.</description>
+      <dc:creator>Cointelegraph by Felix Ng</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/11/01M82Y4PMA2YN6DTA00JY4GVH4/hi-crypto-charts-101-how-to-read-cryptocurrency-charts-trump.jpg" fileSize="420116" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/11/01M82Y4PMA2YN6DTA00JY4GVH4/hi-crypto-charts-101-how-to-read-cryptocurrency-charts-trump.jpg" length="420116" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>North Korean hackers create memecoins to launder funds from Binance hack: Elliptic</title>
+      <pubDate>Mon, 09 Nov 2026 20:26:34 +0000</pubDate>
+      <atom:updated>Tue, 10 Nov 2026 15:44:33 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/north-korean-hackers-memecoins-launder-binance-hack-elliptic</guid>
+      <link><![CDATA[https://cointelegraph.com/news/north-korean-hackers-memecoins-launder-binance-hack-elliptic?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>The blockchain firm traced stolen funds through six new tokens on NEAR, where hackers used liquidity pools to obscure transfers between wallets.</description>
+      <dc:creator>Cointelegraph by Nate Kostar</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/11/01M70X59B82FS5F3H9N89JXV87/hi-north-korea-hack-3.jpg" fileSize="796618" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/11/01M70X59B82FS5F3H9N89JXV87/hi-north-korea-hack-3.jpg" length="796618" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Trump’s memecoin ventures derailed CLARITY Act, Scaramucci says</title>
+      <pubDate>Thu, 05 Nov 2026 12:39:36 +0000</pubDate>
+      <atom:updated>Fri, 06 Nov 2026 16:14:00 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/scaramucci-trump-memecoins-clarity-act-failure</guid>
+      <link><![CDATA[https://cointelegraph.com/news/scaramucci-trump-memecoins-clarity-act-failure?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>The SkyBridge founder said disputes over ethics restrictions also stalled negotiations, with both sides responsible for the setback.</description>
+      <dc:creator>Cointelegraph by Ezra Reguerra</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/11/01M6NRM1CFBRDW897ACTE4GX9T/trump-meme-coins.jpg" fileSize="287060" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/11/01M6NRM1CFBRDW897ACTE4GX9T/trump-meme-coins.jpg" length="287060" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Trump-linked tokens lead crypto losses after Democrats sweep in the US midterms </title>
+      <pubDate>Wed, 04 Nov 2026 19:15:39 +0000</pubDate>
+      <atom:updated>Fri, 06 Nov 2026 14:39:39 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/trump-linked-tokens-lead-crypto-losses-after-democrats-sweep-in-the-us-midterms</guid>
+      <link><![CDATA[https://cointelegraph.com/news/trump-linked-tokens-lead-crypto-losses-after-democrats-sweep-in-the-us-midterms?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>The official Trump and World Liberty Financial tokens were the two biggest losers among the top 100 cryptocurrencies on Wednesday, even as Bitcoin and Ether rallied.</description>
+      <dc:creator>Cointelegraph by Jona Jaupi</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/11/01M6KTGBVFHWKW3CZF0886CX5A/trumpcoinelections.png" fileSize="1632802" type="image/png" medium="image" height="848" width="1264">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/11/01M6KTGBVFHWKW3CZF0886CX5A/trumpcoinelections.png" length="1632802" type="image/png"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Your fridge could one day stake Ether, launch memecoins: CFTC chair</title>
+      <pubDate>Thu, 29 Oct 2026 04:39:49 +0000</pubDate>
+      <atom:updated>Thu, 29 Oct 2026 04:46:53 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/a-fridge-that-launches-memecoins-cftc-floats-ai-crypto-future</guid>
+      <link><![CDATA[https://cointelegraph.com/news/a-fridge-that-launches-memecoins-cftc-floats-ai-crypto-future?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>CFTC chair Mike Selig says autonomous AI agents could challenge financial rules built around human traders, and regulators need to adapt.</description>
+      <dc:creator>Cointelegraph by Felix Ng</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/10/01M62YRQYZXNTVJN5ND4CSDWQZ/hi-chinese-banking-regulation-blockchain-variant.jpg" fileSize="392818" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/10/01M62YRQYZXNTVJN5ND4CSDWQZ/hi-chinese-banking-regulation-blockchain-variant.jpg" length="392818" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Hunter Biden confirms LAPTOP token ‘not a rug pull,’ just trolling Trumps</title>
+      <pubDate>Wed, 07 Oct 2026 18:00:10 +0000</pubDate>
+      <atom:updated>Thu, 08 Oct 2026 07:02:38 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/hunter-biden-laptop-memecoin-troll-no-rug-pull</guid>
+      <link><![CDATA[https://cointelegraph.com/news/hunter-biden-laptop-memecoin-troll-no-rug-pull?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>“Trump’s coin was max extraction, and I wanted to troll every grift like it,“ said Hunter Biden in a breakdown of the memecoin launch and fallout.</description>
+      <dc:creator>Cointelegraph by Turner Wright</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M1YD6ZJP44HSCKV9AHX0ECEZ/hunter-biden-memecoin.png" fileSize="1549995" type="image/png" medium="image" height="848" width="1264">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M1YD6ZJP44HSCKV9AHX0ECEZ/hunter-biden-memecoin.png" length="1549995" type="image/png"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Trump to host 3rd ‘exclusive’ memecoin event amid corruption claims</title>
+      <pubDate>Thu, 01 Oct 2026 21:00:11 +0000</pubDate>
+      <atom:updated>Thu, 29 Oct 2026 09:06:16 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/donald-trump-memecoin-dinner-corruption-claims</guid>
+      <link><![CDATA[https://cointelegraph.com/news/donald-trump-memecoin-dinner-corruption-claims?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>The president is scheduled to appear at his golf club in Washington, DC, at a Nov. 22 dinner for his top 185 memecoin holders, following similar events in May 2025 and April 2026.</description>
+      <dc:creator>Cointelegraph by Turner Wright</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/10/01M3WEDVQV08N86T96EE7QKVBP/trump-and-memecoin.jpg" fileSize="834176" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/10/01M3WEDVQV08N86T96EE7QKVBP/trump-and-memecoin.jpg" length="834176" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Altseason is coming — and traders are more discerning this time </title>
+      <pubDate>Mon, 28 Sep 2026 13:30:00 +0000</pubDate>
+      <atom:updated>Mon, 28 Sep 2026 01:20:41 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/magazine/altseason-is-coming-and-traders-are-more-discerning-this-time</guid>
+      <link><![CDATA[https://cointelegraph.com/magazine/altseason-is-coming-and-traders-are-more-discerning-this-time?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Altseason is almost here and early signs suggest traders are becoming more selective, with capital flowing into revenue-generating protocols across a number of different narratives.</description>
+      <dc:creator>Cointelegraph by Christina Comben</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M3GVFQGS7G1BH1D1YT6S4CE8/magazine-will-there-ever-be-another-altcoin-season.png" fileSize="1611315" type="image/png" medium="image" height="768" width="1376">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M3GVFQGS7G1BH1D1YT6S4CE8/magazine-will-there-ever-be-another-altcoin-season.png" length="1611315" type="image/png"/>
+      <category>Magazine</category>
+    </item>
+    <item>
+      <title>Newsom signs California ban on public officials issuing memecoins </title>
+      <pubDate>Mon, 28 Sep 2026 02:23:42 +0000</pubDate>
+      <atom:updated>Mon, 28 Sep 2026 02:26:49 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/newsom-signs-california-ban-on-public-officials-issuing-memecoins</guid>
+      <link><![CDATA[https://cointelegraph.com/news/newsom-signs-california-ban-on-public-officials-issuing-memecoins?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>The law also restricts crypto companies from offering certain memecoins tied to public officials to California residents and takes effect for tokens issued from Jan. 1, 2027.</description>
+      <dc:creator>Cointelegraph by Felix Ng</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M3JX3KVEP7E99FBBRT94FX62/regulation-office-document-paper-california.jpg" fileSize="239975" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M3JX3KVEP7E99FBBRT94FX62/regulation-office-document-paper-california.jpg" length="239975" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Crypto’s biggest week ever? Swarm fears prompt AI slowdown: Hodler’s Digest</title>
+      <pubDate>Mon, 14 Sep 2026 00:15:37 +0000</pubDate>
+      <atom:updated>Mon, 14 Sep 2026 23:15:46 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/magazine/cryptos-biggest-week-ever-swarm-fears-prompt-ai-slowdown-hodlers-digest</guid>
+      <link><![CDATA[https://cointelegraph.com/magazine/cryptos-biggest-week-ever-swarm-fears-prompt-ai-slowdown-hodlers-digest?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Crypto’s moment of CLARITY finally arrives with a key Senate vote on Tuesday. AI swarm fears prompt development slowdown, with some predicting big falls in AI stock prices.</description>
+      <dc:creator>Cointelegraph by Andrew Fenton</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M2EK46FSXWXQTA0ENWV5Z0W4/three-figures-no-text.png" fileSize="7959498" type="image/png" medium="image" height="1446" width="2570">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M2EK46FSXWXQTA0ENWV5Z0W4/three-figures-no-text.png" length="7959498" type="image/png"/>
+      <category>Magazine</category>
+    </item>
+    <item>
+      <title>Trading stocks against BONER is the latest trend for DeFi degens</title>
+      <pubDate>Fri, 11 Sep 2026 13:30:00 +0000</pubDate>
+      <atom:updated>Fri, 11 Sep 2026 00:40:17 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/magazine/trading-stocks-against-boner-is-the-latest-trend-for-defi-degens</guid>
+      <link><![CDATA[https://cointelegraph.com/magazine/trading-stocks-against-boner-is-the-latest-trend-for-defi-degens?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Why would anyone want to trade a healthcare stock for a memecoin like BONER? Why wouldn’t they, ask the degens on Robinhood Chain who are building a strange new corner of DeFi.</description>
+      <dc:creator>Cointelegraph by Christina Comben</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M2336QVGKKJ171MCKQFKPC2W/magazine-vlad-robinhood.jpg" fileSize="659279" type="image/jpeg" medium="image" height="1446" width="2570">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M2336QVGKKJ171MCKQFKPC2W/magazine-vlad-robinhood.jpg" length="659279" type="image/jpeg"/>
+      <category>Magazine</category>
+    </item>
+    <item>
+      <title>Bitwise to put down Dogecoin ETF less than a year after launch</title>
+      <pubDate>Fri, 11 Sep 2026 07:47:13 +0000</pubDate>
+      <atom:updated>Tue, 15 Sep 2026 01:31:50 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/bitwise-put-down-dogecoin-etf-year-launch</guid>
+      <link><![CDATA[https://cointelegraph.com/news/bitwise-put-down-dogecoin-etf-year-launch?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>BWOW held about $688,000 in net assets as of Sept. 9. Trading is expected to end Oct. 14, with cash payouts to follow around Oct. 22.</description>
+      <dc:creator>Cointelegraph by Yohan Yun</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M27PG6K246A1E33FQTARMGXQ/hi-how-to-buy-and-sell-dogecoin-etf.png" fileSize="1871912" type="image/png" medium="image" height="848" width="1264">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M27PG6K246A1E33FQTARMGXQ/hi-how-to-buy-and-sell-dogecoin-etf.png" length="1871912" type="image/png"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Solana sees record 263K tokens issued in a single day</title>
+      <pubDate>Thu, 10 Sep 2026 13:00:00 +0000</pubDate>
+      <atom:updated>Tue, 06 Oct 2026 09:14:54 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/solana-record-263k-tokens-issued</guid>
+      <link><![CDATA[https://cointelegraph.com/news/solana-record-263k-tokens-issued?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Memecoin platform Pump.fun accounted for most of the new tokens among launchpads, as the Solana network notched a new all-time daily issuance high.</description>
+      <dc:creator>Cointelegraph by Zoltan Vardai</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M25NP75E37J3BC23WNMYYFA2/hi-memecoins-tracing-the-journey-from-memes-to-the-multi-billion-dollar-world-of-scams-and-rugpulls.jpg" fileSize="594239" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M25NP75E37J3BC23WNMYYFA2/hi-memecoins-tracing-the-journey-from-memes-to-the-multi-billion-dollar-world-of-scams-and-rugpulls.jpg" length="594239" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Hunter Biden denies profiting from memecoin after his LAPTOP crashes</title>
+      <pubDate>Thu, 10 Sep 2026 10:08:46 +0000</pubDate>
+      <atom:updated>Thu, 10 Sep 2026 10:14:29 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/hunter-biden-denies-profiting-memecoin-laptop-crash</guid>
+      <link><![CDATA[https://cointelegraph.com/news/hunter-biden-denies-profiting-memecoin-laptop-crash?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Nansen found a $117,800 unrealized loss in one wallet as the team announced liquidity incentives and Bubblemaps flagged fresh top holders.</description>
+      <dc:creator>Cointelegraph by Yohan Yun</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M25BJ9JWGMFTGFS40DY5BEP8/bungee-jumping-laptop.png" fileSize="1458629" type="image/png" medium="image" height="848" width="1264">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M25BJ9JWGMFTGFS40DY5BEP8/bungee-jumping-laptop.png" length="1458629" type="image/png"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Joe Biden’s son to launch memecoin, will send to TRUMP holders: WSJ</title>
+      <pubDate>Mon, 07 Sep 2026 18:53:47 +0000</pubDate>
+      <atom:updated>Tue, 06 Oct 2026 09:15:51 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/hunter-biden-laptop-memecoin-reimburse-trump-holders</guid>
+      <link><![CDATA[https://cointelegraph.com/news/hunter-biden-laptop-memecoin-reimburse-trump-holders?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Hunter Biden will reportedly distribute 200 million of the LAPTOP token to his substack subscribers, members of a mailing list and investors in President Donald Trump’s memecoin.</description>
+      <dc:creator>Cointelegraph by Turner Wright</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M1YD6ZJP44HSCKV9AHX0ECEZ/hunter-biden-memecoin.png" fileSize="1549995" type="image/png" medium="image" height="848" width="1264">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M1YD6ZJP44HSCKV9AHX0ECEZ/hunter-biden-memecoin.png" length="1549995" type="image/png"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Fomo overtakes Pump.fun in daily revenue on Solana</title>
+      <pubDate>Mon, 07 Sep 2026 07:45:39 +0000</pubDate>
+      <atom:updated>Tue, 06 Oct 2026 09:16:22 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/fomo-pumpfun-revenue-app-solana</guid>
+      <link><![CDATA[https://cointelegraph.com/news/fomo-pumpfun-revenue-app-solana?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Fomo generated $1.76 million on Friday, beating Pump.fun’s $1.1 million, though the memecoin launchpad remains ahead over 30 days.</description>
+      <dc:creator>Cointelegraph by Zoltan Vardai</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M1XA5XHGVP1S4E8DGH0JJ4XZ/sponsor-screen-traid2.jpg" fileSize="396700" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M1XA5XHGVP1S4E8DGH0JJ4XZ/sponsor-screen-traid2.jpg" length="396700" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Token buybacks are booming. But are they good for crypto projects?</title>
+      <pubDate>Fri, 04 Sep 2026 13:30:00 +0000</pubDate>
+      <atom:updated>Tue, 08 Sep 2026 09:15:48 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/magazine/token-buybacks-are-booming-but-are-they-good-for-crypto-projects</guid>
+      <link><![CDATA[https://cointelegraph.com/magazine/token-buybacks-are-booming-but-are-they-good-for-crypto-projects?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Crypto projects are spending hundreds of millions buying their own tokens. But are buybacks creating lasting value — or just making tokens look more valuable than they really are?</description>
+      <dc:creator>Cointelegraph by Christina Comben</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M1K8AJR546DD0XM3RM8FJK76/magazine-tokenomics.jpg" fileSize="828088" type="image/jpeg" medium="image" height="1446" width="2570">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/09/01M1K8AJR546DD0XM3RM8FJK76/magazine-tokenomics.jpg" length="828088" type="image/jpeg"/>
+      <category>Magazine</category>
+    </item>
+    <item>
+      <title>Hyperliquid, Pump.fun account for nearly 90% of record $638M crypto buybacks: FT</title>
+      <pubDate>Mon, 31 Aug 2026 11:21:57 +0000</pubDate>
+      <atom:updated>Tue, 17 Nov 2026 13:19:13 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/hyperliquid-pumpfun-90-record-638m-crypto-buybacks</guid>
+      <link><![CDATA[https://cointelegraph.com/news/hyperliquid-pumpfun-90-record-638m-crypto-buybacks?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Crypto projects spent a record $638 million on token buybacks so far in 2026, as more protocols are turning their revenue into buybacks to return more value to token holders.</description>
+      <dc:creator>Cointelegraph by Zoltan Vardai</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/08/01M1BKM23K1W60BMQWAASQP4GF/hiblockchain-powered-prediction-platforms-hyperliquid-1.jpg" fileSize="687183" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/08/01M1BKM23K1W60BMQWAASQP4GF/hiblockchain-powered-prediction-platforms-hyperliquid-1.jpg" length="687183" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>California Senate passes bill to ban memecoin issuance by public officials</title>
+      <pubDate>Fri, 28 Aug 2026 12:09:48 +0000</pubDate>
+      <atom:updated>Mon, 31 Aug 2026 02:49:17 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/california-bill-ban-memecoin-issuance-public-officials</guid>
+      <link><![CDATA[https://cointelegraph.com/news/california-bill-ban-memecoin-issuance-public-officials?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>The bill seeks to prohibit the listing of memecoins issued by federal public officials to California residents, citing conflicts of interest and “pay-to-play arrangements.”</description>
+      <dc:creator>Cointelegraph by Zoltan Vardai</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/2026/08/01M142VHEYF1NJ88CYWK7HGE6J/hi-california-vs-maga-memecoins.jpg" fileSize="334472" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/2026/08/01M142VHEYF1NJ88CYWK7HGE6J/hi-california-vs-maga-memecoins.jpg" length="334472" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Trump cost investors $4.7B through crypto ‘schemes’: Public Citizen</title>
+      <pubDate>Thu, 27 Aug 2026 19:22:14 +0000</pubDate>
+      <atom:updated>Tue, 06 Oct 2026 09:20:05 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/donald-trump-crypto-investors-losses-public-citizen</guid>
+      <link><![CDATA[https://cointelegraph.com/news/donald-trump-crypto-investors-losses-public-citizen?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>While investors in World Liberty Financial‘s USD1 stablecoin “haven’t suffered major losses,” many lost billions of dollars in other Trump ventures, according to Public Citizen.</description>
+      <dc:creator>Cointelegraph by Turner Wright</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/analytics-red-trump.jpg" fileSize="902322" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/analytics-red-trump.jpg" length="902322" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>BNB Chain pursues legal action after ex-employee’s memecoin launch</title>
+      <pubDate>Sun, 02 Aug 2026 11:24:00 +0000</pubDate>
+      <atom:updated>Tue, 06 Oct 2026 09:44:35 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/bnb-chain-legal-action-ex-employee-memecoin</guid>
+      <link><![CDATA[https://cointelegraph.com/news/bnb-chain-legal-action-ex-employee-memecoin?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>BNB Chain said a former employee allegedly used a company tutorial wallet to create a memecoin that the blockchain ecosystem says it did not authorize or endorse.</description>
+      <dc:creator>Cointelegraph by Helen Partz</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/hi-what-is-a-social-engineering-attack-bnb-chain.jpg" fileSize="340345" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/hi-what-is-a-social-engineering-attack-bnb-chain.jpg" length="340345" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Pump.fun laid off workers before they received millions in PUMP tokens: Report</title>
+      <pubDate>Fri, 31 Jul 2026 19:16:19 +0000</pubDate>
+      <atom:updated>Sat, 01 Aug 2026 14:02:11 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/pump-fun-employees-fired-tokens-vest</guid>
+      <link><![CDATA[https://cointelegraph.com/news/pump-fun-employees-fired-tokens-vest?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Pump.fun co-founder Noah Tweedale reportedly attributed the layoffs to the company growing too quickly.</description>
+      <dc:creator>Cointelegraph by Turner Wright</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/hi-pumpfun-firing.png" fileSize="1706606" type="image/png" medium="image" height="842" width="1264">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/hi-pumpfun-firing.png" length="1706606" type="image/png"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Robinhood CEO’s X account hacked in apparent memecoin scam</title>
+      <pubDate>Thu, 23 Jul 2026 18:09:26 +0000</pubDate>
+      <atom:updated>Fri, 24 Jul 2026 12:02:56 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/robinhood-ceo-x-account-hacked-in-apparent-memecoin-scam</guid>
+      <link><![CDATA[https://cointelegraph.com/news/robinhood-ceo-x-account-hacked-in-apparent-memecoin-scam?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>A hacker reportedly took over Robinhood CEO Vlad Tenev’s X account to promote a fake “VLAD” memecoin, posting what appeared to be a malicious token contract address.</description>
+      <dc:creator>Cointelegraph by Sam Bourgi</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/hi-robinhood-down-several-times-as-dj-sees-biggest-one-day-gains.jpg" fileSize="331789" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/hi-robinhood-down-several-times-as-dj-sees-biggest-one-day-gains.jpg" length="331789" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Robinhood Chain memecoin launchpad Vlad.fun halts after ‘internal integrity’ issue</title>
+      <pubDate>Thu, 16 Jul 2026 07:43:45 +0000</pubDate>
+      <atom:updated>Fri, 17 Jul 2026 01:31:53 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/robinhood-chain-memecoin-vladfun-halts-integrity</guid>
+      <link><![CDATA[https://cointelegraph.com/news/robinhood-chain-memecoin-vladfun-halts-integrity?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Vlad.fun suspended its platform after discovering a “serious internal integrity issue” involving members of its team, without disclosing the nature of the alleged misconduct.</description>
+      <dc:creator>Cointelegraph</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/memecoin-robinhood.jpg" fileSize="841988" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/memecoin-robinhood.jpg" length="841988" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>BonkDAO reports $20M theft from ‘malicious governance proposal’</title>
+      <pubDate>Mon, 06 Jul 2026 20:55:11 +0000</pubDate>
+      <atom:updated>Wed, 08 Jul 2026 04:28:41 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/bonk-dao-malicious-governance-proposal</guid>
+      <link><![CDATA[https://cointelegraph.com/news/bonk-dao-malicious-governance-proposal?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>The developers behind the memecoin project said they had informed law enforcement after the attack and were working to “recover funds and identify those responsible.”</description>
+      <dc:creator>Cointelegraph by Turner Wright</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/news-crypto-studio-bonk.jpg" fileSize="574935" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/news-crypto-studio-bonk.jpg" length="574935" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Trump’s memecoin holders have lost over $3.8B: Report</title>
+      <pubDate>Mon, 06 Jul 2026 03:12:14 +0000</pubDate>
+      <atom:updated>Tue, 07 Jul 2026 10:01:22 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/trumps-memecoin-loses-38b-for-nearly-1m-holders-report</guid>
+      <link><![CDATA[https://cointelegraph.com/news/trumps-memecoin-loses-38b-for-nearly-1m-holders-report?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Nansen analysis shows that just under half a million wallets profited on Donald Trump’s memecoin, while the large majority of buyers lost out.</description>
+      <dc:creator>Cointelegraph by Jesse Coghlan</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/hi-trump-china-tariffs.png" fileSize="1422315" type="image/png" medium="image" height="848" width="1264">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/hi-trump-china-tariffs.png" length="1422315" type="image/png"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>SOL rallies as Solana memecoins, prediction market activity surge: Are bulls back?</title>
+      <pubDate>Fri, 03 Jul 2026 21:36:02 +0000</pubDate>
+      <atom:updated>Mon, 06 Jul 2026 03:32:30 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/markets/sol-rallies-as-solana-memecoins-prediction-market-activity-surge-are-bulls-back</guid>
+      <link><![CDATA[https://cointelegraph.com/markets/sol-rallies-as-solana-memecoins-prediction-market-activity-surge-are-bulls-back?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Rising interest in Solana-network memecoins and prediction markets was followed by a rally in SOL price. Will the momentum continue?</description>
+      <dc:creator>Cointelegraph by Marcel Pechman</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/hi-pension-funds-are-opening-up-to-investing-into-crypto-solana.jpg" fileSize="308612" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/hi-pension-funds-are-opening-up-to-investing-into-crypto-solana.jpg" length="308612" type="image/jpeg"/>
+      <category>Markets</category>
+    </item>
+    <item>
+      <title>US senator calls for ban on elected officials issuing memecoins</title>
+      <pubDate>Fri, 03 Jul 2026 19:26:21 +0000</pubDate>
+      <atom:updated>Mon, 06 Jul 2026 09:29:09 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/us-senator-ban-elected-officials-memecoins</guid>
+      <link><![CDATA[https://cointelegraph.com/news/us-senator-ban-elected-officials-memecoins?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>The restriction proposed by Senator Kirsten Gillibrand would bar members of Congress, the US president and their spouses from “issuing or sponsoring their own digital assets.”</description>
+      <dc:creator>Cointelegraph by Turner Wright</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/trump-memecoin-1.jpg" fileSize="258569" type="image/jpeg" medium="image" height="967" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/trump-memecoin-1.jpg" length="258569" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>Trump earned more from crypto than real estate in 2025, filings show</title>
+      <pubDate>Wed, 01 Jul 2026 04:01:09 +0000</pubDate>
+      <atom:updated>Thu, 02 Jul 2026 05:16:05 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/news/trump-earned-more-from-crypto-than-real-estate-in-2025-filings-show</guid>
+      <link><![CDATA[https://cointelegraph.com/news/trump-earned-more-from-crypto-than-real-estate-in-2025-filings-show?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>Memecoin sales and royalties made the most money for Trump last year, more than all of his golf courses combined.</description>
+      <dc:creator>Cointelegraph by Martin Young</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/trump-memecoin.jpg" fileSize="333392" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/trump-memecoin.jpg" length="333392" type="image/jpeg"/>
+      <category>Latest News</category>
+    </item>
+    <item>
+      <title>How memecoin marketing moved from online speculation to real-world risk</title>
+      <pubDate>Wed, 24 Jun 2026 14:30:00 +0000</pubDate>
+      <atom:updated>Wed, 24 Jun 2026 11:18:08 +0000</atom:updated>
+      <guid isPermaLink="true">https://cointelegraph.com/magazine/pump-fun-go-bounty-memecoin-risks</guid>
+      <link><![CDATA[https://cointelegraph.com/magazine/pump-fun-go-bounty-memecoin-risks?utm_source=rss_feed&utm_medium=rss_tag_memecoin&utm_campaign=rss_partner_inbound]]></link>
+      <description>From alcohol dares to head-shaving challenges, memecoin campaigns are turning engagement into exploitation.</description>
+      <dc:creator>Cointelegraph by Dilip Kumar Patairya</dc:creator>
+      <media:content url="https://s3-images.ctmedia.io/media/article-covers/how-memecoin-marketing-crossed-from-online-speculation-into-real-world-risk.jpg" fileSize="462060" type="image/jpeg" medium="image" height="966" width="1450">
+        <credit>Cointelegraph</credit>
+        <media:credit role="publishing company">Cointelegraph</media:credit>
+      </media:content>
+      <enclosure url="https://s3-images.ctmedia.io/media/article-covers/how-memecoin-marketing-crossed-from-online-speculation-into-real-world-risk.jpg" length="462060" type="image/jpeg"/>
+      <category>Magazine</category>
+    </item>
+  </channel>
+</rss>
