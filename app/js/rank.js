@@ -37,10 +37,13 @@ export function storyScore(s, now = Date.now(), ctx = {}) {
 
 // P2.1: el Top 3 es de impacto. Mi lista y mis palabras ordenan dentro de Alto/Medio, pero una historia «Bajo»
 // solo entra si no hay 3 de Alto/Medio (y va al final).
+// P2.2: primero las frescas (≤ top3MaxAgeHours desde la primera aparición): Alto/Medio y luego «Bajo».
+// Las viejas solo rellenan si no hay 3, también Alto/Medio antes que «Bajo». Dentro de cada grupo, el orden de rankStories.
 export function pickTop3(stories, ctx = {}, now = Date.now()) {
   const ranked = rankStories(stories.filter((s) => s.level), 'top', ctx, now);
-  const strong = ranked.filter((s) => s.level !== 'low');
-  return [...strong, ...ranked.filter((s) => s.level === 'low')].slice(0, 3);
+  const fresh = (s) => (now - Date.parse(s.time)) / H <= RANK.top3MaxAgeHours;
+  const group = (s) => (fresh(s) ? 0 : 2) + (s.level === 'low' ? 1 : 0); // fresca fuerte 0, fresca «Bajo» 1, vieja fuerte 2, vieja «Bajo» 3
+  return ranked.sort((a, b) => group(a) - group(b)).slice(0, 3); // sort es estable: conserva el orden dentro del grupo
 }
 
 // mode: 'top' (impacto × recencia + fuentes + lo personal) | 'latest' (por hora de la primera aparición)

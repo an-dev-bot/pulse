@@ -91,7 +91,7 @@ export const MEME_DEFAULTS = { view: 'volume', minLiquidity: 10000, minAgeHours:
 export const STALE_MIN = 45;
 
 // Orden «Top» en el dispositivo: impacto × recencia + fuentes + lo personal (mi lista y palabras clave).
-export const RANK = { weight: { high: 3, medium: 1.8, low: 1 }, halfLifeHours: 8, perExtraSource: 0.25, maxSourceBonus: 1, watchBoost: 1.2, keywordBoost: 1.2 };
+export const RANK = { weight: { high: 3, medium: 1.8, low: 1 }, halfLifeHours: 8, perExtraSource: 0.25, maxSourceBonus: 1, watchBoost: 1.2, keywordBoost: 1.2, top3MaxAgeHours: 12 };
 
 // ---------- P2: universo de acciones, forex y activos ----------
 // Para seguir otra acción: agrégala aquí (símbolo de CNBC, nombre y nombres con los que sale en titulares).
